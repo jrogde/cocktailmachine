@@ -125,7 +125,6 @@ class DrinkService:
         print(f'name:  {name}')
         if name is None:
             return
-        name = name["Name"]
         drink = self.get_drink(name)
         ingredients = drink['Ingredients']
         logger.info(ingredients)
