@@ -8,10 +8,8 @@ logger.setLevel(logging.DEBUG)
 
 class PumpService:
 
+    ml_p_ms = 0.0045
 
-    def __init__(self, test: str):
-        self.a = test
-        logger.debug(f'asda')
 
     def number_to_bytes(self, number):
         if number < 0 or number > 65535:
@@ -21,9 +19,12 @@ class PumpService:
         byte2 = number & 0xFF
         return [byte1, byte2]
 
-    def run_pump(self, pump_number):
-        send = [pump_number, *self.number_to_bytes(1000)]
-        logger.debug(f'pump_number {send}')
+    def calculate_ms(self, ml):
+        return int(ml/self.ml_p_ms)
+
+    def run_pump(self, pump_number, ml):
+        send = [pump_number, *self.number_to_bytes(self.calculate_ms(ml))]
+        logger.debug(f'run_pump {send}')
         try:
             bus = smbus.SMBus(1)
             bus.write_block_data(0x04, send)
@@ -32,6 +33,6 @@ class PumpService:
 
 
 if __name__ == '__main__':
-    a = PumpService('a')
+    a = PumpService()
 
-    a.run_pump(1)
+    a.run_pump(1,270)
