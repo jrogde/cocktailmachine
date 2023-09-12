@@ -122,6 +122,8 @@ class DrinkService:
         return limited_list[0]
 
     def make_drink(self, name):
+        if name is None:
+            return
         drink = self.get_drink(name)
         ingredients = drink['Ingredients']
         logger.info(ingredients)
