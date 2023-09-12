@@ -34,7 +34,6 @@ right_box = Box(app, width=400, height=440, align="right")
 # A listbox for displaying drink names
 listbox = ListBox(left_box,items=[drink["Name"] for drink in service.get_drink_types()], 
                   command=display_drink_details, width=400, height=400)
-listbox.tk.config(font=("Arial", 16))
 
 
 
