@@ -1,10 +1,16 @@
-import  logging
+import logging
+import json
+from pump_service import PumpService
 
 
 logger = logging.getLogger(__name__)
+logging.basicConfig()
+logger.setLevel(logging.DEBUG)
 
 
 class DrinkService:
+    pump_service = PumpService()
+
     drink_ingredients = {
         1: "Vodka",
         2: "Rum",
@@ -105,17 +111,27 @@ class DrinkService:
         }
     ]
 
-    #def __init__(self):
-
     def get_drink_ingredients(self):
         return self.drink_ingredients
 
     def get_drink_types(self):
         return self.drink_types
 
+    def get_drink(self, name):
+        limited_list = [element for element in self.drink_types if element['Name'] == name]
+        return limited_list[0]
+
+    def make_drink(self, name):
+        drink = self.get_drink(name)
+        ingredients = drink['Ingredients']
+        logger.info(ingredients)
+        for key, value in ingredients.items():
+            pump_number = key
+            ml = value[0]
+            self.pump_service.run_pump(pump_number, ml)
 
 if __name__ == '__main__':
     a = DrinkService()
-    print(a.get_drink_types())
+    a.make_drink("Gin Fizz")
 
 
