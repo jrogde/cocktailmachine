@@ -36,9 +36,8 @@ listbox = ListBox(left_box,items=[drink["Name"] for drink in service.get_drink_t
                   command=display_drink_details, width=400, height=400)
 
 
-print(listbox.value)
 # A button to print the details of the selected drink
-print_button = PushButton(left_box, text="Print Drink Details", command=service.make_drink(listbox.value), width=400)
+print_button = PushButton(left_box, text="Make Drink", command=service.make_drink(listbox.value), width=400)
 
 # A textbox for displaying selected drink's details in the right side of the app
 ingredients_textbox = TextBox(right_box, width=400, height=440, multiline=True, scrollbar=True)
