@@ -14,7 +14,8 @@ def display_drink_details(selected_value):
                 ingredients_textbox.append(f"{ingredient_name}: {value[0]} {value[1]}\n")
 
 
-def print_drink_details():
+def print_drink_details(name):
+    print(name)
     selected_value = listbox.value
     if selected_value:
         for drink in service.get_drink_types():
@@ -36,7 +37,7 @@ listbox = ListBox(left_box, items=[drink["Name"] for drink in service.get_drink_
                   command=display_drink_details, width=400, height=400)
 
 # A button to print the details of the selected drink
-print_button = PushButton(left_box, text="Print Drink Details", command=print_drink_details, width=400)
+print_button = PushButton(left_box, text="Print Drink Details", command=print_drink_details(listbox.value), width=400)
 
 #print_button = PushButton(left_box, text="Print Drink Details", command=service.make_drink(listbox.value), width=400)
 
