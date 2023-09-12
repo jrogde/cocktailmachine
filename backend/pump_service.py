@@ -27,11 +27,11 @@ class PumpService:
             bus = smbus.SMBus(1)
             if pump_number > 8:
                 send = [pump_number-8, *self.number_to_bytes(self.calculate_ms(ml))]
-                logger.debug(f'run_pump 5: {send}')
+                logger.debug(f'run_pump 5, {pump_number}: {send}')
                 bus.write_block_data(0x05, 0, send)
             else:
                 send = [pump_number, *self.number_to_bytes(self.calculate_ms(ml))]
-                logger.debug(f'run_pump 4: {send}')
+                logger.debug(f'run_pump 4, {pump_number}: {send}')
                 bus.write_block_data(0x04, 0, send)
         except Exception as e:
             print(f"Error communicating with Arduino: {e}")
