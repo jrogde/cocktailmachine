@@ -27,7 +27,7 @@ class PumpService:
         logger.debug(f'run_pump {send}')
         try:
             bus = smbus.SMBus(1)
-            bus.write_block_data(0x04, send)
+            bus.write_block_data(0x04, 0, send)
         except Exception as e:
             print(f"Error communicating with Arduino: {e}")
 
