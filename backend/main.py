@@ -13,6 +13,7 @@ def display_drink_details(selected_value):
     
     for drink in service.get_drink_types():
         if drink["Name"] == selected_value:
+            drink_name_label.value = selected_value
             # Construct the image path based on the drink's name
             for key, value in drink['Ingredients'].items():
                 ingredient_name = service.get_drink_ingredients().get(key)
@@ -26,11 +27,12 @@ left_box = Box(app, width=500, height=440, layout="grid", grid=[0,0], align="lef
 """ drink_image = Picture(app,grid=[1,0], image="images/Tequila Sunrise.png") """
 right_box = Box(app, width=300, height=440, layout="grid", grid=[1,0], align="right")
 
+drink_name_label = Text(right_box, text="", size=20, grid=[0,0])
 
-ingredients_textbox = TextBox(right_box, width=50, height=10, multiline=True, scrollbar=True,grid=[0,0])
+ingredients_textbox = TextBox(right_box, width=25, height=10, multiline=True, scrollbar=True,grid=[0,1])
 
 # Make Drink Button
-make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,1], width=150, align="left", command=lambda: service.make_drink(selected_drink_name))
+make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,2], width=150, align="left", command=lambda: service.make_drink(selected_drink_name))
 
 
 
