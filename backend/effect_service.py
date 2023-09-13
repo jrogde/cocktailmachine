@@ -2,11 +2,17 @@ import pygame
 import time
 import os
 import random
+import logging
+
+
+logger = logging.getLogger(__name__)
+logging.basicConfig()
+logger.setLevel(logging.DEBUG)
 
 class EffectService:
 
-    sound_files_loops = [os.path.join('../resources/sounds/loops', file) for file in os.listdir('../resources/sounds/loops') if file.endswith('.wav')]
-    sound_files_blips = [os.path.join('../resources/sounds/blips', file) for file in os.listdir('../resources/sounds/blips') if file.endswith('.wav')]
+    sound_files_loops = [os.path.join('sounds/loops', file) for file in os.listdir('sounds/loops') if file.endswith('.wav')]
+    sound_files_blips = [os.path.join('sounds/blips', file) for file in os.listdir('sounds/blips') if file.endswith('.wav')]
 
     def __init__(self):
         # Initialize the Pygame mixer
@@ -25,6 +31,7 @@ class EffectService:
     def make_sound(self, audio_file, time_sec):
         try:
             # Play the audio file
+            logger.debug(f'make_sound file {audio_file} for {time_sec} sec')
             pygame.mixer.music.load(audio_file)
             if time_sec > 0:
                 pygame.mixer.music.play(100)
