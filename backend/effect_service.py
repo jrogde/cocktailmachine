@@ -11,8 +11,8 @@ logger.setLevel(logging.DEBUG)
 
 class EffectService:
 
-    sound_files_loops = [os.path.join('sounds/loops', file) for file in os.listdir('sounds/loops') if file.endswith('.wav')]
-    sound_files_blips = [os.path.join('sounds/blips', file) for file in os.listdir('sounds/blips') if file.endswith('.wav')]
+    sound_files_loops = [os.path.join('sounds/loops', file) for file in os.listdir('sounds/loops') if file.endswith('_16.wav')]
+    sound_files_blips = [os.path.join('sounds/blips', file) for file in os.listdir('sounds/blips') if file.endswith('_16.wav')]
 
     def __init__(self):
         # Initialize the Pygame mixer

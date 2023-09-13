@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment="init sound">
+    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment=" sound">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/effect_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/effect_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/effect_service.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -29,18 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/LLAG/source/div/cocktailmachine/backend"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pump_service">
+  <component name="RunManager" selected="Python.drink_service">
     <configuration name="drink_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cocktailmachine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pump_service" />
         <item itemvalue="Python.drink_service" />
         <item itemvalue="Python.effect_service" />
+        <item itemvalue="Python.pump_service" />
         <item itemvalue="Python.main2" />
       </list>
     </recent_temporary>
@@ -185,7 +191,28 @@
       <option name="project" value="LOCAL" />
       <updated>1694592804000</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" sound">
+      <created>1694593491070</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694593491070</updated>
+    </task>
+    <task id="LOCAL-00008" summary=" sound">
+      <created>1694594094785</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694594094785</updated>
+    </task>
+    <task id="LOCAL-00009" summary=" sound">
+      <created>1694595105757</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694595105757</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +230,8 @@
     <MESSAGE value="sound" />
     <MESSAGE value="call  command=lambda: service.make_drink(listbox.value)" />
     <MESSAGE value="init sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="init sound" />
+    <MESSAGE value=" sound" />
+    <option name="LAST_COMMIT_MESSAGE" value=" sound" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
