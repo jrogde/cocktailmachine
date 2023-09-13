@@ -31,8 +31,17 @@ drink_name_label = Text(right_box, text="", size=20, grid=[0,0])
 
 ingredients_textbox = TextBox(right_box, width=25, height=10, multiline=True, scrollbar=True,grid=[0,1])
 
+def re_enable_button():
+    make_button.enabled = True
+
+def make_drink_and_disable():
+    service.make_drink(selected_drink_name)
+    make_button.enabled = False
+    app.after(service.get_drink_max_ingredient_ms(selected_drink_name), re_enable_button)  # re-enable after 10 seconds (10000 milliseconds)
+
 # Make Drink Button
-make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,2], width=150, align="left", command=lambda: service.make_drink(selected_drink_name))
+make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,2], width=150, align="left", command=make_drink_and_disable)
+
 
 
 
