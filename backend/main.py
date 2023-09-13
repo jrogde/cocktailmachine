@@ -1,4 +1,4 @@
-from guizero import App, ListBox, PushButton, Text, TextBox, Box, Picture
+from guizero import App, ListBox, PushButton, Text, TextBox, Box, Picture, Window
 from drink_service import DrinkService
 from PIL import ImageTk, Image
 
@@ -38,12 +38,31 @@ def make_drink_and_disable():
     service.make_drink(selected_drink_name)
     make_button.enabled = False
     app.after(service.get_drink_max_ingredient_ms(selected_drink_name), re_enable_button)  # re-enable after 10 seconds (10000 milliseconds)
+def button_action(name):
+    pass
+def goto_settings():
+    # Create a new Window for the settings
+    settings_window = Window(app, title="Settings", width=800, height=440, layout="grid")
+    
+    drink_ingredients = service.get_drink_ingredients()
+    # Add some settings controls, for example:
+    close_button = PushButton(settings_window,grid=[2,4], text="Close", command=settings_window.destroy)
+    for index, ingredient in enumerate(drink_ingredients.values()):
+        row = index // 4
+        col = index % 4
+        button = PushButton(settings_window, text=ingredient, grid=[col, row], width=20)
+        button = PushButton(settings_window, text=ingredient, grid=[col, row], width=20, 
+                            command=lambda k=ingredient: button_action(k))
+
+
+
+
 
 # Make Drink Button
 make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,2], width=150, align="left", command=make_drink_and_disable)
 
 
-
+make_button = PushButton(right_box, image="images/settings image.png", grid=[0,2], align="right", command=goto_settings)
 
 
 # A textbox for displaying selected drink's details in the right side of the app
