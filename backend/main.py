@@ -27,13 +27,15 @@ left_box = Box(app, width=500, height=440, layout="grid", grid=[0,0], align="lef
 right_box = Box(app, width=300, height=440, layout="grid", grid=[1,0], align="right")
 
 
+ingredients_textbox = TextBox(right_box, width=50, height=10, multiline=True, scrollbar=True,grid=[0,0])
+
 # Make Drink Button
-make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,1], width=150, command=lambda: service.make_drink(selected_drink_name))
+make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,1], width=150, align="left", command=lambda: service.make_drink(selected_drink_name))
+
 
 
 
 # A textbox for displaying selected drink's details in the right side of the app
-ingredients_textbox = TextBox(right_box, width=50, height=10, multiline=True, scrollbar=True,grid=[0,0])
 
 all_drinks = service.get_drink_types()
 
@@ -42,15 +44,15 @@ drink_buttons = []
 
 for index, drink in enumerate(all_drinks):
     # Calculate grid coordinates based on the index
-    row = index // 4  # Using integer division to get the row number
-    col = index % 4   # Using modulo to get the column number (0 or 1)
+    row = index // 5  # Using integer division to get the row number
+    col = index % 5   # Using modulo to get the column number (0 or 1)
     
     image_path = f"images/{drink['Name']}.png"
     
     # Load and scale the image using PIL
     original = Image.open(image_path)
     width, height = original.size
-    scaled = original.resize((int(width * 0.5), int(height * 0.5)))
+    scaled = original.resize((int(width * 0.7), int(height * 0.7)))
     
     # Convert the PIL Image object into a format that guizero can display
     tk_scaled_image = ImageTk.PhotoImage(scaled)
