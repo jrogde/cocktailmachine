@@ -1,6 +1,7 @@
 import logging
 import time
 from pump_service import PumpService
+from effect_service import EffectService
 
 
 logger = logging.getLogger(__name__)
@@ -10,6 +11,7 @@ logger.setLevel(logging.DEBUG)
 
 class DrinkService:
     pump_service = PumpService()
+    effect_service = EffectService()
 
     drink_ingredients = {
         1: "Vodka",
@@ -125,7 +127,7 @@ class DrinkService:
         drink = self.get_drink(drink_name)
         ingredients = drink['Ingredients']
         max_ml = 0
-        for value in ingredients.items():
+        for key, value in ingredients.items():
             ml = value[0]
             if ml > max_ml:
                 max_ml = ml
@@ -136,21 +138,23 @@ class DrinkService:
         print(f'name:  {name}')
         if name is None:
             return
+
         drink = self.get_drink(name)
         ingredients = drink['Ingredients']
         logger.info(ingredients)
         for key, value in ingredients.items():
             pump_number = key
             ml = value[0]
-            #self.pump_service.run_pump(pump_number, ml)
+            self.pump_service.run_pump(pump_number, ml)
 
         sleep_sec = self.get_drink_max_ingredient_ms(name) / 1000
         logger.debug(f'Sleep for {sleep_sec}')
-        #time.sleep(sleep_sec)
+        self.effect_service.play_random_sound(sleep_sec)
 
 
 if __name__ == '__main__':
     a = DrinkService()
-    a.make_drink("Gin Fizz")
+    a.make_drink("Rum Punch")
+    a.make_drink("Rum and Cola")
 
 
