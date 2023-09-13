@@ -6,7 +6,8 @@ from effect_service import EffectService
 
 logger = logging.getLogger(__name__)
 logging.basicConfig()
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(filename='cocktailmachine.log', encoding='utf-8', level=logging.DEBUG)
+
 
 
 class DrinkService:
