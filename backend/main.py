@@ -8,7 +8,8 @@ def display_drink_details(selected_value):
     for drink in service.get_drink_types():
         if drink["Name"] == selected_value:
             # Construct the image path based on the drink's name
-            image_path = f"{drink['Name']}.png"
+            image_path = f"images/{drink['Name']}.png"
+
             
             # Update the Picture widget's image attribute
             try:
@@ -20,14 +21,6 @@ def display_drink_details(selected_value):
                 ingredient_name = service.get_drink_ingredients().get(key)
                 ingredients_textbox.append(f"{ingredient_name}: {value[0]} {value[1]}\n")
 
-""" def display_drink_details(selected_value):
-    ingredients_textbox.clear()
-    
-    for drink in service.get_drink_types():
-        if drink["Name"] == selected_value:
-            for key, value in drink['Ingredients'].items():
-                ingredient_name = service.get_drink_ingredients().get(key)
-                ingredients_textbox.append(f"{ingredient_name}: {value[0]} {value[1]}\n") """
 
 def print_drink_details():
     selected_value = listbox.value
@@ -44,7 +37,7 @@ app = App(title="Cocktail Maker", width=800, height=440, layout="grid")
 
 # Left and Right boxes using Grid layout
 left_box = Box(app, width=300, height=440, layout="grid", grid=[0,0], align="left")
-drink_image = Picture(app,grid=[1,0], image="Tequila Sunrise.png")
+drink_image = Picture(app,grid=[1,0], image="images/Tequila Sunrise.png")
 right_box = Box(app, width=300, height=440, layout="grid", grid=[2,0], align="right")
 
 # Title on top of left box
