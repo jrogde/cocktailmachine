@@ -11,6 +11,8 @@ class EffectService:
     def __init__(self):
         # Initialize the Pygame mixer
         pygame.mixer.init()
+        pygame.mixer.pre_init(44100, 16, 2, 4096)  # frequency, size, channels, buffersize
+        pygame.init()
         # Set the audio volume (0.0 to 1.0)
         pygame.mixer.music.set_volume(1.0)
 
