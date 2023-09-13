@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment="sound">
+    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment="init sound">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/effect_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/effect_service.py" afterDir="false" />
     </list>
@@ -40,7 +40,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.effect_service">
+  <component name="RunManager" selected="Python.pump_service">
     <configuration name="drink_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cocktailmachine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,9 +127,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.effect_service" />
-        <item itemvalue="Python.drink_service" />
         <item itemvalue="Python.pump_service" />
+        <item itemvalue="Python.drink_service" />
+        <item itemvalue="Python.effect_service" />
         <item itemvalue="Python.main2" />
       </list>
     </recent_temporary>
@@ -157,7 +157,35 @@
       <option name="project" value="LOCAL" />
       <updated>1694589805946</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sound">
+      <created>1694590862524</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694590862524</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sound">
+      <created>1694592018720</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694592018720</updated>
+    </task>
+    <task id="LOCAL-00005" summary="call  command=lambda: service.make_drink(listbox.value)">
+      <created>1694592564691</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694592564691</updated>
+    </task>
+    <task id="LOCAL-00006" summary="init sound">
+      <created>1694592804000</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694592804000</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +201,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="sound" />
+    <MESSAGE value="call  command=lambda: service.make_drink(listbox.value)" />
+    <MESSAGE value="init sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="init sound" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -184,14 +214,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/pump_service.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/drink_service.py</url>
           <line>131</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/pump_service.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
