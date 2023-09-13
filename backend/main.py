@@ -50,9 +50,8 @@ def goto_settings():
     for index, ingredient in enumerate(drink_ingredients.values()):
         row = index // 4
         col = index % 4
-        button = PushButton(settings_window, text=ingredient, grid=[col, row], width=20)
         button = PushButton(settings_window, text=ingredient, grid=[col, row], width=20, 
-                            command=lambda k=ingredient: button_action(k))
+                            command=lambda k=ingredient: service.run_ingredient(k, 5))
 
 
 

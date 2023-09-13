@@ -124,6 +124,9 @@ class DrinkService:
         limited_list = [element for element in self.drink_types if element['Name'] == name]
         return limited_list[0]
 
+    def get_ingredients_pump_number(self, name):
+        return [k for k, v in self.drink_ingredients.items() if v == name][0]
+
     def get_drink_max_ingredient_ms(self, drink_name):
         drink = self.get_drink(drink_name)
         ingredients = drink['Ingredients']
@@ -154,7 +157,21 @@ class DrinkService:
         #self.effect_service.make_sound('sounds/16bit-AU_AMH2_94_synth_pluck_loop_lounges_Fmin.wav', sleep_sec)
         self.effect_service.play_random_sound_blips()
 
+    def run_ingredient(self, name, ml):
+        print(f'run_ingredient:  {name} ml: {ml}')
+        if name is None:
+            return
+
+        pump_number = self.get_ingredients_pump_number(name)
+        self.pump_service.run_pump(pump_number, ml)
+
+        sleep_sec = self.pump_service.calculate_ms(ml) / 1000
+        logger.debug(f'Sleep for {sleep_sec}')
+        self.effect_service.play_random_sound_loops(sleep_sec)
+        self.effect_service.play_random_sound_blips()
+
 
 if __name__ == '__main__':
     a = DrinkService()
-    a.make_drink("Gin Fizz")
+    a.run_ingredients("Tequila", 100)
+    #a.make_drink("Gin Fizz")
