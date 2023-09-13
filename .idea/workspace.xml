@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment=" sound 16">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cocktailmachine.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/drink_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/drink_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +291,42 @@
       <option name="project" value="LOCAL" />
       <updated>1694599446971</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary=" sound 16">
+      <created>1694604877653</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1694604877653</updated>
+    </task>
+    <task id="LOCAL-00022" summary=" sound 16">
+      <created>1694607213618</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694607213618</updated>
+    </task>
+    <task id="LOCAL-00023" summary=" sound 16">
+      <created>1694607819097</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1694607819097</updated>
+    </task>
+    <task id="LOCAL-00024" summary=" sound 16">
+      <created>1694607899342</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694607899342</updated>
+    </task>
+    <task id="LOCAL-00025" summary=" sound 16">
+      <created>1694611005011</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1694611005011</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,18 +358,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/drink_service.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/pump_service.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/drink_service.py</url>
-          <line>127</line>
-          <option name="timeStamp" value="16" />
+          <line>167</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -346,6 +372,8 @@
         <watch expression="value[0]" language="Python" />
         <watch expression="self.drink_ingredients" language="Python" />
         <watch expression="self.drink_ingredients.get(3)" language="Python" />
+        <watch expression="[k for k, v in self.drink_ingredients.items() if v == name]" language="Python" />
+        <watch expression="self.calculate_ms(ml)" language="Python" />
       </configuration>
     </watches-manager>
   </component>

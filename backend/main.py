@@ -21,7 +21,7 @@ def display_drink_details(selected_value):
 
 
 app = App(title="Cocktail Maker", width=800, height=440, layout="grid")
-app.set_full_screen()
+#app.set_full_screen()
 
 # Left and Right boxes using Grid layout
 left_box = Box(app, width=500, height=440, layout="grid", grid=[0,0], align="left")

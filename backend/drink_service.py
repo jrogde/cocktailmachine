@@ -173,5 +173,5 @@ class DrinkService:
 
 if __name__ == '__main__':
     a = DrinkService()
-    a.run_ingredients("Tequila", 100)
-    #a.make_drink("Gin Fizz")
+    #a.run_ingredients("Tequila", 100)
+    a.make_drink("Gin Fizz")
