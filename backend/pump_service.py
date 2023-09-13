@@ -9,7 +9,8 @@ class PumpService:
     ml_p_ms = 0.0045
 
     i2c_addr_4 = 0x04
-    i2c_addr_5 = 0x05
+    #i2c_addr_5 = 0x05
+    i2c_addr_5 = 0x04
     i2c_addr_6 = 0x06
 
     pump_started = 65
