@@ -31,7 +31,7 @@ class PumpService:
         try:
             time_bytes = self.number_to_bytes(self.calculate_ms(ml))
             bus = smbus.SMBus(1)
-            bus.write_block_data(self.i2c_addr_6, 0, [self.pump_started, *time_bytes])
+            #bus.write_block_data(self.i2c_addr_6, 0, [self.pump_started, *time_bytes])
             if pump_number > 8:
                 send = [pump_number - 8, *time_bytes]
                 logger.debug(f'run_pump 5, {pump_number}: {send}')
@@ -40,7 +40,7 @@ class PumpService:
                 send = [pump_number, *time_bytes]
                 logger.debug(f'run_pump 4, {pump_number}: {send}')
                 bus.write_block_data(self.i2c_addr_4, 0, send)
-            bus.write_block_data(self.i2c_addr_6, 0, [self.pump_stopped, *time_bytes])
+            #bus.write_block_data(self.i2c_addr_6, 0, [self.pump_stopped, *time_bytes])
         except Exception as e:
             print(f"Error communicating with Arduino: {e}")
 
