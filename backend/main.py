@@ -55,7 +55,7 @@ listbox = ListBox(left_box,items=[drink["Name"] for drink in service.get_drink_t
                   command=display_drink_details, width=300, height=360, grid=[0,1])
 
 # Make Drink Button
-make_button = PushButton(left_box, text="Make drink", grid=[0,2])
+make_button = PushButton(left_box, text="Make drink", grid=[0,2],  command=lambda: service.make_drink(listbox.value))
 
 # Title on top of left box
 title = Text(right_box, text="Ingredients", size=20, grid=[0,0])
