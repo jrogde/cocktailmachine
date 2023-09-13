@@ -39,7 +39,7 @@ def make_drink_and_disable():
     make_button.enabled = False
     app.after(service.get_drink_max_ingredient_ms(selected_drink_name), re_enable_button)  # re-enable after 10 seconds (10000 milliseconds)
 def button_action(name):
-    pass
+    print(name)
 def goto_settings():
     # Create a new Window for the settings
     settings_window = Window(app, title="Settings", width=800, height=440, layout="grid")
@@ -62,7 +62,7 @@ def goto_settings():
 make_button = PushButton(right_box, image="images/Make Cocktail Button.png", grid=[0,2], width=150, align="left", command=make_drink_and_disable)
 
 
-make_button = PushButton(right_box, image="images/settings image.png", grid=[0,2], align="right", command=goto_settings)
+settings_button = PushButton(right_box, image="images/settings image.png", grid=[0,2], align="right", command=goto_settings)
 
 
 # A textbox for displaying selected drink's details in the right side of the app
