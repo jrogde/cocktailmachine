@@ -149,8 +149,9 @@ class DrinkService:
 
         sleep_sec = self.get_drink_max_ingredient_ms(name) / 1000
         logger.debug(f'Sleep for {sleep_sec}')
-        self.effect_service.play_random_sound_loops(sleep_sec)
-        self.effect_service.play_random_sound_blips()
+        #self.effect_service.play_random_sound_loops(sleep_sec)
+        self.effect_service.make_sound('sounds/16bit-AU_AMH2_94_synth_pluck_loop_lounges_Fmin.wav', sleep_sec)
+        #self.effect_service.play_random_sound_blips()
 
 
 if __name__ == '__main__':
