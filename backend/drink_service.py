@@ -133,5 +133,3 @@ class DrinkService:
 if __name__ == '__main__':
     a = DrinkService()
     a.make_drink("Gin Fizz")
-
-
