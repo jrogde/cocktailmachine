@@ -32,6 +32,7 @@ def print_drink_details(name):
 
 
 app = App(title="Cocktail Maker", width=800, height=440)
+app.set_full_screen()
 
 # Create a Box to hold the listbox and the print button, set the width to half of app's width
 left_box = Box(app, width=400, height=440, align="left")
