@@ -14,13 +14,13 @@ class DrinkService:
 
     drink_ingredients = {
         1: "Vodka",
-        2: "Rum",
-        3: "Tequila",
-        4: "Gin",
-        5: "Whiskey",
-        6: "Triple Sec",
-        7: "Lime Juice",
-        8: "Lemon Juice",
+        2: "Cointreu",
+        3: "Lemon",
+        4: "Syrup",
+        5: "Vodka",
+        6: "Cointreu",
+        7: "Lemon",
+        8: "Syrup",
         9: "Orange Juice",
         10: "Cranberry Juice",
         11: "Grenadine",
@@ -33,18 +33,12 @@ class DrinkService:
 
     drink_types = [
         {
-            "Name": "Tequila Sunrise",
+            "Name": "Lemon Drop Martini",
             "Ingredients": {
-                3: (60, "ml"),  # Tequila
-                9: (90, "ml"),  # Orange Juice
-                11: (15, "ml")  # Grenadine
-            }
-        },
-        {
-            "Name": "Gin and Tonic",
-            "Ingredients": {
-                4: (60, "ml"),  # Gin
-                14: (90, "ml")  # Tonic Water
+                1: (40, "ml"),  
+                2: (10, "ml"),  
+				3: (20, "ml"),  
+                4: (20, "ml")  
             }
         },
         {
@@ -171,4 +165,4 @@ class DrinkService:
 if __name__ == '__main__':
     a = DrinkService()
     #a.run_ingredients("Tequila", 100)
-    a.make_drink("Gin Fizz")
+    a.make_drink("Lemon Drop Martini")
