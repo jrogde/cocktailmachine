@@ -23,6 +23,7 @@ void setup() {
     if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
   #endif
   // End of trinket special code
+  Serial.begin(9600);
   strip.begin();
   strip.setBrightness(50);
   strip.show(); // Initialize all pixels to 'off'
@@ -35,7 +36,7 @@ const int FINISHED=3;
 
 int state = IDLE;
 
-int countUpTime = 0;
+long pumpStopTime = 0;
 
 void pulsate(uint32_t c, uint8_t wait) {
   strip.setBrightness(1);
@@ -98,31 +99,33 @@ void spin(uint32_t c, uint8_t waitXX) {
 uint32_t getProgressColor(int pixels, int iteration)
 {
   int colorG = (128 / (pixels) * (iteration + 1)) + 128;
-  
   return strip.Color(40, 40, colorG); 
 }
 
 void countUp() {
- if (countUpTime <= 10) { return; }
+  const long now = millis();
+  // Require at least 10 milliseconds to do countUp
+  if (now > (pumpStopTime - 10)) {
+    // Ups - we have already timed out - bail out!
+    state = IDLE;
+    return;
+  }
 
- colorWipe(strip.Color(0,   0,   0), 0); // Wipe all colroos
- int pixels = strip.numPixels();
+  colorWipe(strip.Color(0,   0,   0), 0); // Wipe all colroos
+  const int pixels = strip.numPixels();
+  const int delayPerIteration = (pumpStopTime - now  - 10) / pixels;  
  
- int delayPerIteration = (countUpTime  - 10) / pixels;  
- 
- for(int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
+ for (int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
     int32_t color = getProgressColor(pixels, i);
-    for (int j=0; j< i; j++)
-    {
-        strip.setPixelColor(j, color);  
+    for (int j=0; j< i; j++) {
+      strip.setPixelColor(j, color);  
     }
     strip.setPixelColor(i, color);
     strip.show();   
-    if (PUMPING != state) 
-    { 
-      return; 
-    }                       //  Update strip to match
-    delay(delayPerIteration);                           //  Pause for a moment
+    if (PUMPING != state) { 
+      return;
+    }
+    delay(delayPerIteration);
   }
 
   state = FINISHED;
@@ -134,46 +137,22 @@ void initI2c() {
   Wire.onReceive(receiveEvent); // register event
 }
 
-
-void loop() {
-  Serial.begin(9600);
+void loop() {  
   if (IDLE == state) {
     pulsate(strip.Color(0, 255, 0), 50); // Green
   }
   if (STARTING == state) {
-    spin(strip.Color(255, 0, 0), 10);// Green
+    spin(strip.Color(255, 0, 0), 10); // Green
   }
   if (PUMPING == state) {
     countUp();
   }
   if (FINISHED == state) {
-   //theaterChaseRainbow(50);
    theaterChase(strip.Color(0, 255, 0), 50); 
    theaterChase(strip.Color(0, 255, 0), 50); 
    theaterChase(strip.Color(0, 255, 0), 50); 
    state = IDLE;
   }
-  //spin(strip.Color(0, 255, 0), 10);// Green
-  //pulsate(strip.Color(0, 255, 0), 50);// Green
-  // Some example procedures showing hw to display to the pixels:
-  //colorWipe(strip.Color(255, 0, 0), 50); // Red
-  //colorWipe(strip.Color(0, 255, 0), 50); // Green
-  //colorWipe(strip.Color(0, 0, 255), 50); // Blue
-//colorWipe(strip.Color(0, 0, 0, 255), 50); // White RGBW
-  // Send a theater pixel chase in...
-  //theaterChase(strip.Color(127, 127, 127), 50); // White
-  //theaterChase(strip.Color(127, 0, 0), 50); // Red
-  //theaterChase(strip.Color(0, 0, 127), 50); // Blue
-  //rainbow(20);
-  //rainbowCycle(20);
-  //theaterChaseRainbow(50);
-/*
-  for (int i=0; i<24; i++) {
-   strip.setPixelColor(i, strip.Color(255, 0, 0));
-    strip.show();
-    delay(200);
-  }
-  */
 }
 
 void receiveEvent(int howMany)
@@ -205,12 +184,13 @@ void receiveEvent(int howMany)
   int lsb = Wire.read();
   milliseconds = milliseconds + lsb;
 
-  countUpTime = milliseconds - 7000; //sutracting for init and misc
+  pumpStopTime = millis() + milliseconds;
 
   state = STARTING;
-  
 }
 
+
+/* From example for light below */
 // Fill the dots one after the other with a color
 void colorWipe(uint32_t c, uint8_t wait) {
   for(uint16_t i=0; i<strip.numPixels(); i++) {
