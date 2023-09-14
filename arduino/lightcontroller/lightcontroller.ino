@@ -36,7 +36,7 @@ const int FINISHED=3;
 
 int state = IDLE;
 
-virtual long pumpStopTime = 0;
+volatile long pumpStopTime = 0;
 
 void pulsate(uint32_t c, uint8_t wait) {
   strip.setBrightness(1);
