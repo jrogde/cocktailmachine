@@ -37,8 +37,8 @@ def re_enable_button():
 
 def make_drink_and_disable():
     service.make_drink(selected_drink_name)
-    make_button.enabled = False
-    app.after(service.get_drink_max_ingredient_ms(selected_drink_name), re_enable_button)  # re-enable after 10 seconds (10000 milliseconds)
+    #make_button.enabled = False
+    #app.after(service.get_drink_max_ingredient_ms(selected_drink_name), re_enable_button)  # re-enable after 10 seconds (10000 milliseconds)
 def button_action(name):
     print(name)
 def goto_settings():
