@@ -1,12 +1,10 @@
 import logging
-import time
 from pump_service import PumpService
 from effect_service import EffectService
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig()
-logging.basicConfig(filename='cocktailmachine.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
 
 
 
@@ -154,7 +152,6 @@ class DrinkService:
         sleep_sec = self.get_drink_max_ingredient_ms(name) / 1000
         logger.debug(f'Sleep for {sleep_sec}')
         self.effect_service.play_random_sound_loops(sleep_sec)
-        #self.effect_service.make_sound('sounds/16bit-AU_AMH2_94_synth_pluck_loop_lounges_Fmin.wav', sleep_sec)
         self.effect_service.play_random_sound_blips()
 
     def run_ingredient(self, name, ml):
