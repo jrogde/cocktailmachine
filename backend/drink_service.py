@@ -42,15 +42,6 @@ class DrinkService:
             }
         },
         {
-            "Name": "Lemon Drop Martini",
-            "Ingredients": {
-                5: (40, "ml"),  
-                6: (10, "ml"),  
-				7: (20, "ml"),  
-                8: (20, "ml")  
-            }
-        },
-        {
             "Name": "Vodka Cranberry",
             "Ingredients": {
                 1: (60, "ml"),  # Vodka
@@ -174,4 +165,4 @@ class DrinkService:
 if __name__ == '__main__':
     a = DrinkService()
     #a.run_ingredients("Tequila", 100)
-    a.make_drink("Gin Fizz")
+    a.make_drink("Lemon Drop Martini")
