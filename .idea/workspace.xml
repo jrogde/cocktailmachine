@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment=" sound 16">
-      <change afterPath="$PROJECT_DIR$/backend/arduino_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/drink_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/drink_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/effect_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/effect_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pump_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pump_service.py" afterDir="false" />
-    </list>
+    <list default="true" id="7dc3af44-f1d4-4ea9-abf3-4414701682ca" name="Changes" comment="arduino retry" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -365,7 +358,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694615613275</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="arduino retry">
+      <created>1694689779197</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1694689779197</updated>
+    </task>
+    <task id="LOCAL-00029" summary="arduino retry">
+      <created>1694690178382</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1694690178382</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -385,7 +392,8 @@
     <MESSAGE value="init sound" />
     <MESSAGE value=" sound" />
     <MESSAGE value=" sound 16" />
-    <option name="LAST_COMMIT_MESSAGE" value=" sound 16" />
+    <MESSAGE value="arduino retry" />
+    <option name="LAST_COMMIT_MESSAGE" value="arduino retry" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
